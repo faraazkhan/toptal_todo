@@ -1,0 +1,33 @@
+{
+  "name": "toptal_todo",
+  "version": "0.0.0",
+  "authors": [
+    "Faraaz Khan <faraaz@rationalizeit.us>"
+  ],
+  "description": "Simple Todo App for TopTal Interview",
+  "main": "app.js",
+  "keywords": [
+    "todo",
+    "backbone",
+    "toptal"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backgrid": "~0.3.5",
+    "backbone-pageable": "~1.4.5",
+    "backgrid-select-all": "~0.3.5",
+    "backgrid-paginator": "~0.3.5",
+    "backgrid-filter": "~0.3.5",
+    "backgrid-select2-cell": "~0.3.5",
+    "backgrid-moment-cell": "~0.3.5",
+    "backgrid-text-cell": "~0.3.5"
+  }
+}
