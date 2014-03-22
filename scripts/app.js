@@ -1,7 +1,7 @@
 $(function() {
-  var Territory = Backbone.Model.extend({});
-  var PageableTerritories = Backbone.PageableCollection.extend({
-    model: Territory,
+  var Todo = Backbone.Model.extend({});
+  var TodoList = Backbone.PageableCollection.extend({
+    model: Todo,
     url: "api/todos",
     state: {
       pageSize: 15
@@ -9,7 +9,7 @@ $(function() {
     mode: "client" // page entirely on the client side
   });
 
-  var pageableTerritories = new PageableTerritories();
+  var todoList = new TodoList();
 
   // Define columns
   var columns = [{
@@ -36,7 +36,7 @@ $(function() {
       cell: "select-row",
       headerCell: "select-all"
     }].concat(columns),
-    collection: pageableTerritories
+    collection: todoList
   });
 
   // Render the grid
@@ -45,7 +45,7 @@ $(function() {
 
   // Initialize the paginator
   var paginator = new Backgrid.Extension.Paginator({
-    collection: pageableTerritories
+    collection: todoList
   });
 
   // Render the paginator
@@ -54,8 +54,8 @@ $(function() {
   // Initialize a client-side filter to filter on the client
   // mode pageable collection's cache.
   var filter = new Backgrid.Extension.ClientSideFilter({
-    collection: pageableTerritories,
-    fields: ['name']
+    collection: todoList,
+    fields: ['text']
   });
 
   // Render the filter
@@ -65,6 +65,6 @@ $(function() {
   $(filter.el).css({float: "right", margin: "20px"});
 
   // Fetch some data
-  pageableTerritories.fetch({reset: true});
+  todoList.fetch({reset: true});
 
 });
